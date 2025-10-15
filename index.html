@@ -11,16 +11,25 @@
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       background: #f5f7fb;
+      padding: 32px 16px;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    .radio-row {
       display: flex;
+      gap: 16px;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      margin-top: 6px;
     }
 
     
     form {
       width: 100%;
       max-width: 420px;
+      margin: 0 auto; /* center horizontally */
       background: #ffffff;
       padding: 24px;
       border-radius: 12px;
@@ -104,27 +113,30 @@
   <h2>Student Information Form</h2>
 
   <form action="#" method="post">
-    
-    <label for="name">Full Name:</label><br>
-    <input type="text" id="name" name="name" placeholder="Enter your full name" required><br><br>
+    <div class="field">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    </div>
 
+    <div class="field">
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age" min="1" max="120" required>
+    </div>
 
-    <label for="age">Age:</label><br>
-    <input type="number" id="age" name="age" placeholder="Enter your age" required><br><br>
+    <div class="field">
+      <label>Gender:</label>
+      <div class="radio-row">
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Other"> Other</label>
+      </div>
+    </div>
 
-    
-    <label>Gender:</label><br>
-    <input type="radio" id="male" name="gender" value="Male" required>
-    <label for="male">Male</label>
-    <input type="radio" id="female" name="gender" value="Female">
-    <label for="female">Female</label>
-    <input type="radio" id="other" name="gender" value="Other">
-    <label for="other">Other</label><br><br>
+    <div class="field">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
-
-    
     <input type="submit" value="Submit">
     
   </form>
